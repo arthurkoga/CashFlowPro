@@ -6,8 +6,8 @@ Uma API de controle de despesas pesssoais.
 
 - Categorias
     - [Listar Todas](#listar-todas)
-    - [Detalhar](#detalhar-Categorias)
-    - [Cadastrar](#catastrar-categoria)
+    - [Detalhar](#detalhar-categoria)
+    - [Cadastrar](#cadastrar-categoria)
     - [Apagar](#apagar-categoria)
     - [Editar](#editar-categoria)
 
