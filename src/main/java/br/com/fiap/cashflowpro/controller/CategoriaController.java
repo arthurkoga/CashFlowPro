@@ -81,14 +81,24 @@ public class CategoriaController {
         return ResponseEntity.noContent().build();
     }
     
-    @PutMapping("{id}")
+     @PutMapping("/{id}")
     public ResponseEntity<Categoria> update(
         @PathVariable Long id,
         @RequestBody Categoria categoria
     ){
         log.info("atualizado categoria com id {} para {}", id, categoria);
 
-        return ResponseEntity.ok().build();
+        var categoriaEncontrada = getCategoriaById(id);
+        
+        if (categoriaEncontrada.isEmpty()){
+                return ResponseEntity.notFound().build();
+            }
+
+        var categoriaAtualizada = new Categoria(id, categoria.nome(), categoria.icone());
+        repository.remove(categoriaEncontrada.get());
+        repository.add(categoriaAtualizada);
+        
+        return ResponseEntity.ok(categoriaAtualizada);
     }
     
 
