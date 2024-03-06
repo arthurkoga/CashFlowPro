@@ -81,7 +81,7 @@ public class CategoriaController {
         return ResponseEntity.noContent().build();
     }
     
-
+    @PutMapping("{id}")
     public ResponseEntity<Categoria> update(
         @PathVariable Long id,
         @RequestBody Categoria categoria
